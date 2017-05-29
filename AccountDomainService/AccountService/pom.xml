@@ -41,7 +41,7 @@
             </goals>
             <configuration>
               <files>
-                <file>${basedir}/_config/_filters/${env.name}.properties</file>
+                <file>${basedir}/_config/_filters/${env_name}.properties</file>
               </files>
             </configuration>
           </execution>
