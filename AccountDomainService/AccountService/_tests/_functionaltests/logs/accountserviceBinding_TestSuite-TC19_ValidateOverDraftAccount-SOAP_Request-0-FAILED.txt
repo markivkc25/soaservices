@@ -1,0 +1,115 @@
+Status: FAILED
+Time Taken: 198
+Size: 1368
+Timestamp: Sun May 28 21:24:14 EDT 2017
+TestStep: SOAP Request
+
+----------------- Messages ------------------------------
+[Script Assertion] startup failed:
+Script1.groovy: 2: expecting EOF, found 'def' @ line 2, column 92.
+   change.responseContentAsXml ) def overdr
+                                 ^
+org.codehaus.groovy.syntax.SyntaxException: expecting EOF, found 'def' @ line 2, column 92.
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:139)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:107)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:163)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:839)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:544)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:520)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:497)
+	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:306)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:287)
+	at groovy.lang.GroovyShell.parseClass(GroovyShell.java:731)
+	at groovy.lang.GroovyShell.parse(GroovyShell.java:743)
+	at groovy.lang.GroovyShell.parse(GroovyShell.java:770)
+	at groovy.lang.GroovyShell.parse(GroovyShell.java:761)
+	at com.eviware.soapui.support.scripting.groovy.SoapUIGroovyScriptEngine.compile(SoapUIGroovyScriptEngine.java:148)
+	at com.eviware.soapui.support.scripting.groovy.SoapUIGroovyScriptEngine.run(SoapUIGroovyScriptEngine.java:93)
+	at com.eviware.soapui.impl.wsdl.teststeps.assertions.basic.GroovyScriptAssertion.assertScript(GroovyScriptAssertion.java:120)
+	at com.eviware.soapui.impl.wsdl.teststeps.assertions.basic.GroovyScriptAssertion.internalAssertResponse(GroovyScriptAssertion.java:137)
+	at com.eviware.soapui.impl.wsdl.teststeps.WsdlMessageAssertion.assertResponse(WsdlMessageAssertion.java:161)
+	at com.eviware.soapui.impl.wsdl.teststeps.WsdlTestRequest.assertResponse(WsdlTestRequest.java:189)
+	at com.eviware.soapui.impl.wsdl.teststeps.WsdlTestRequest.setResponse(WsdlTestRequest.java:159)
+	at com.eviware.soapui.impl.wsdl.teststeps.WsdlTestRequestStep.run(WsdlTestRequestStep.java:439)
+	at com.eviware.soapui.impl.wsdl.support.AbstractTestCaseRunner.runTestStep(AbstractTestCaseRunner.java:239)
+	at com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner.runCurrentTestStep(WsdlTestCaseRunner.java:48)
+	at com.eviware.soapui.impl.wsdl.support.AbstractTestCaseRunner.internalRun(AbstractTestCaseRunner.java:148)
+	at com.eviware.soapui.impl.wsdl.support.AbstractTestCaseRunner.internalRun(AbstractTestCaseRunner.java:43)
+	at com.eviware.soapui.impl.wsdl.support.AbstractTestRunner.run(AbstractTestRunner.java:135)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: Script1.groovy:2:92: expecting EOF, found 'def'
+	at groovyjarjarantlr.Parser.match(Parser.java:211)
+	at org.codehaus.groovy.antlr.parser.GroovyRecognizer.compilationUnit(GroovyRecognizer.java:780)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:130)
+	... 31 more
+
+1 error
+
+
+----------------- Properties ------------------------------
+Endpoint: http://demo5649868.mockable.io/accountservice
+Encoding: UTF-8
+
+---------------- Request ---------------------------
+Request Headers: SOAPAction : "getAccountDetails"
+Connection : Keep-Alive
+User-Agent : Apache-HttpClient/4.1.1 (java 1.5)
+Host : demo5649868.mockable.io
+Accept-Encoding : gzip,deflate
+Content-Length : 320
+Content-Type : text/xml;charset=UTF-8
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">
+   \r
+   <soapenv:Header/>
+   \r
+   <soapenv:Body>
+      \r
+      <ns:getAccountDetailsRequest>7777777777</ns:getAccountDetailsRequest>
+      \r
+   </soapenv:Body>
+   \r
+</soapenv:Envelope>
+
+---------------- Response --------------------------
+Response Headers: X-Cloud-Trace-Context : 5574e24c37b1fb4c86f11d5f01fe38e8
+Server : Google Frontend
+#status# : HTTP/1.1 200 OK
+Content-Length : 1368
+Date : Mon, 29 May 2017 01:24:13 GMT
+Content-Type : application/xml; charset=UTF-8
+
+
+<soapenv:Envelope soap:encodingStyle="http://www.w3.org/2001/12/soap-encoding" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:m="http://demo5649868.mockable.io/service/1" xmlns:soap="soap">
+   <soapenv:Body xmlns:ms="http://www.acmebank.org/retail">
+      <m:getAccountDetailsResponse>
+         <m:AccountNumber>1234567890</m:AccountNumber>
+         <m:AccountName>Chase Bank</m:AccountName>
+         <m:RoutingNumber>1234567</m:RoutingNumber>
+         <m:CurrentBalance>134.5</m:CurrentBalance>
+         <m:OpeningBalance>34.5</m:OpeningBalance>
+         <m:OverdraftProtection>true</m:OverdraftProtection>
+         <m:AccountPrimaryName>Robert</m:AccountPrimaryName>
+         <m:AccountType>Checking</m:AccountType>
+         <m:NumberOfAccountHolders>2</m:NumberOfAccountHolders>
+         <m:JointAccountType>Personal</m:JointAccountType>
+         <m:AccountHoldersList>
+            <m:AccountHolder>
+               <m:AccountOwnerName>Robert</m:AccountOwnerName>
+               <m:AccountOwnerFederalId>456789</m:AccountOwnerFederalId>
+            </m:AccountHolder>
+            <m:AccountHolder>
+               <m:AccountOwnerName>Lisa</m:AccountOwnerName>
+               <m:AccountOwnerFederalId>123456</m:AccountOwnerFederalId>
+            </m:AccountHolder>
+         </m:AccountHoldersList>
+         <m:AccountStatus>Open</m:AccountStatus>
+      </m:getAccountDetailsResponse>
+   </soapenv:Body>
+</soapenv:Envelope>

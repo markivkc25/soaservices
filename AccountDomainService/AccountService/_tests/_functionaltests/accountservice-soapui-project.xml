@@ -1,0 +1,1134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ef4c0303-1c08-4928-a97e-1ca5808a794f" activeEnvironment="Default" name="accountservice"
+                    resourceRoot="" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:WsdlInterface" id="9112f800-00f3-441e-8348-62ed7baf7fe4" wsaVersion="NONE"
+                 name="accountserviceBinding" type="wsdl"
+                 bindingName="{http://demo5649868.mockable.io/service/1}accountserviceBinding" soapVersion="1_1"
+                 anonymous="optional" definition="file:/C:/Users/Nikasha/Downloads/accountservice"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart="file:\C:\Users\Nikasha\Downloads\accountservice">
+      <con:part>
+        <con:url>file:\C:\Users\Nikasha\Downloads\accountservice</con:url>
+        <con:content>
+          <![CDATA[<wsdl:definitions targetNamespace="http://demo5649868.mockable.io/service/1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mio="http://demo5649868.mockable.io/service/1">
+  <wsdl:documentation>mockable.io generated WSDL</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://demo5649868.mockable.io/service/1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="getAccountDetailsRequest" type="xsd:anyType"/>
+      <xsd:element name="getAccountDetailsResponse" type="xsd:anyType"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getAccountDetailsInputMessage">
+    <wsdl:part name="getAccountDetailsInputPart" element="mio:getAccountDetailsRequest"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountDetailsOutputMessage">
+    <wsdl:part name="getAccountDetailsOutputPart" element="mio:getAccountDetailsResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="accountservicePortType">
+    <wsdl:operation name="getAccountDetails">
+      <wsdl:input name="getAccountDetailsInput" message="mio:getAccountDetailsInputMessage"/>
+      <wsdl:output name="getAccountDetailsOutput" message="mio:getAccountDetailsOutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="accountserviceBinding" type="mio:accountservicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getAccountDetails">
+      <soap:operation soapAction="getAccountDetails"/>
+      <wsdl:input name="getAccountDetailsInput">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAccountDetailsOutput">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="accountserviceService">
+    <wsdl:port name="accountservicePort" binding="mio:accountserviceBinding">
+      <soap:address location="http://demo5649868.mockable.io/accountservice"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]>
+        </con:content>
+        <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+      </con:part>
+    </con:definitionCache>
+    <con:endpoints>
+      <con:endpoint>#DEV_URL</con:endpoint>
+      <con:endpoint>${#Project#URL}</con:endpoint>
+      <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+      <con:endpoint>{#Project#DEV_URL}</con:endpoint>
+    </con:endpoints>
+    <con:operation id="6f27b1db-fcd0-4c06-b395-193834a6a216" isOneWay="false" action="getAccountDetails"
+                   name="getAccountDetails" bindingOperationName="getAccountDetails" type="Request-Response"
+                   outputName="getAccountDetailsOutput" inputName="getAccountDetailsInput" receivesAttachments="false"
+                   sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="a23f8004-c4f1-4c8b-ab12-3ec3b2bb2582" name="Request 1">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>${#Project#URL}</con:endpoint>
+        <con:request>
+          <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>123456</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+        </con:request>
+        <con:credentials>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="getAccountDetails"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+    </con:operation>
+  </con:interface>
+  <con:testSuite id="efc4993f-3665-4e41-ade9-ce95fb524fe8" name="accountserviceBinding TestSuite">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="160072d8-071e-4643-a937-7aa5d83d0db2" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC1_ValidateValidSOAPResponse" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" id="ab5d18f8-2565-4101-aa38-c519b2a9d21c" name="getAccountDetails">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="getAccountDetails" id="3ea8feec-61ea-4d02-b564-98155f2be5f1">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>${#TestSuite#ValidAccountNumber}</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="Schema Compliance" id="8e44a1cc-cca7-40f9-8c7c-ea9e05100cda" name="Schema Compliance">
+              <con:configuration>
+                <definition/>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="SOAP Fault Assertion" id="2b871749-dcd8-4fe3-ab25-4abbc9c6cf22" name="Not SOAP Fault"/>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="getAccountDetails" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="4648e040-6820-4ebb-b9f3-0eb47bf79b5f" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC2_ValidateSuccessHTTPStatusCode" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" id="52a893ec-509b-472f-af8f-5314e6e8aad5" name="getAccountDetails">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="getAccountDetails" id="3ea8feec-61ea-4d02-b564-98155f2be5f1">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>${#TestSuite#ValidAccountNumber}</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="SOAP Fault Assertion" id="8799725b-9ba6-4b59-9bd6-35f7d2eb7a6c" name="Not SOAP Fault"/>
+            <con:assertion type="Schema Compliance" id="3d2335c8-4cdd-4757-a051-25c618834687" name="Schema Compliance">
+              <con:configuration/>
+            </con:assertion>
+            <con:assertion type="Invalid HTTP Status Codes" id="d14966d6-9790-4b1b-aa52-c7de8f294f0c"
+                           name="Invalid HTTP Status Codes">
+              <con:configuration>
+                <codes>500,400,401,404,403</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="getAccountDetails" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="6ae96c2f-ae1f-4f07-9456-8cdf1bfcf13b" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC3_ValidateHTTPHeaders" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" name="SOAP Request" id="8574aac4-0c8a-4690-b0f3-cb3ff903738b">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="SOAP Request" id="46cd9375-f2e3-4e6d-b4fe-1302619f01a3">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>${#TestSuite#ValidAccountNumber}?</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="SOAP Response" id="dedaa8fd-4ebf-415c-86c9-b09ed1fcc94b"/>
+            <con:assertion type="Schema Compliance" id="395b858e-a9b4-4715-9b7b-7fc213cf9862" name="Schema Compliance">
+              <con:configuration>
+                <definition/>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="SOAP Fault Assertion" id="a62baeb4-7849-4b67-8d81-ebb5613a1de8" name="Not SOAP Fault"/>
+            <con:assertion type="Simple Contains" id="e20afc59-a096-4172-aa45-a285a89a463e" name="Contains">
+              <con:configuration>
+                <token/>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="06d9b63a-091f-4736-a2b1-4e131a2b8a65"
+                           name="Script Assertion - For HTTP Headers">
+              <con:configuration>
+                <scriptText>assert messageExchange.responseHeaders["Content-Type"] != null assert
+                            messageExchange.responseHeaders["Content-Length"] != null</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="5edabffd-97a4-45fa-9208-75de77bbc73b" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC4_ValidateMandatoryFields" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" name="SOAP Request" id="8aa050e9-6096-4bd2-9b60-3aeb225a0ec3">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="SOAP Request" id="40d779df-a9b5-42eb-8628-0593bbe11fdd">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>${#TestSuite#ValidAccountNumber}?</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="SOAP Response" id="81d99192-5f61-4de9-ab25-f461ce664cd8"/>
+            <con:assertion type="Schema Compliance" id="8a0ac0e8-1e77-410b-ac31-e7ef72b848eb" name="Schema Compliance">
+              <con:configuration>
+                <definition/>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="SOAP Fault Assertion" id="82839ca5-a919-464a-914f-0e6574c8182d" name="Not SOAP Fault"/>
+            <con:assertion type="XPath Match" id="b6dc7b0d-812e-427a-852c-2aa50dafcb18"
+                           name="XPath Match -AccountNumber">
+              <con:configuration>
+                <path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/'; declare namespace
+                      m="http://demo5649868.mockable.io/service/1"; count(//*:AccountNumber/text())</path>
+                <content>1</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="cac06f1e-f778-41bc-9c65-6b532b04c3ab"
+                           name="XPath -RoutingNumber - Match">
+              <con:configuration>
+                <path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/'; declare namespace
+                      m="http://demo5649868.mockable.io/service/1"; count(//*:RoutingNumber/text())</path>
+                <content>1</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="cac06f1e-f778-41bc-9c65-6b532b04c3ab"
+                           name="XPath -AccountType - Match">
+              <con:configuration>
+                <path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/'; declare namespace
+                      m="http://demo5649868.mockable.io/service/1"; count(//*:AccountType/text())</path>
+                <content>1</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="cac06f1e-f778-41bc-9c65-6b532b04c3ab"
+                           name="XPath -AccountHolders - Match">
+              <con:configuration>
+                <path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/'; declare namespace
+                      m="http://demo5649868.mockable.io/service/1"; count(//*:AccountHoldersList/*:AccountHolder)</path>
+                <content>2</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="cac06f1e-f778-41bc-9c65-6b532b04c3ab"
+                           name="XPath -JoingAccountType- Match">
+              <con:configuration>
+                <path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/'; declare namespace
+                      m="http://demo5649868.mockable.io/service/1"; count(//*:JointAccountType/text())</path>
+                <content>1</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="28e9ffb8-e71e-4b24-8221-cd556a2d083b" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC5_ValidateResponseDataTypes" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" name="SOAP Request" id="2114624e-8530-4cf1-bd72-72b12e3f534c">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="SOAP Request" id="9dbc9ea1-e5a7-4869-9a93-274fac9e367e">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>${#TestSuite#ValidAccountNumber}</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="SOAP Response" id="b8e4cae9-2998-4eee-bf14-29b5fe36a5b8"/>
+            <con:assertion type="Schema Compliance" id="44f05c5b-d11e-4f0e-b054-ba9fb597df42"
+                           name="Schema Compliance - Validates the Values Against Schema">
+              <con:configuration/>
+            </con:assertion>
+            <con:assertion type="SOAP Fault Assertion" id="5d3c1914-4a05-4c0a-b6f2-cdee1992af23"/>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="b86633e5-2f72-4c9e-9aa8-694abcfa21df" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC6_ValidateInvalidAccountNumberRequest"
+                  searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" name="SOAP Request" id="bfcd1356-eb23-4111-99af-ecc4a079f8f0">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="SOAP Request" id="ff02a6f0-8304-46c8-bfcc-4acdd1a8b628">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>${#TestSuite#InValidAccountNumber}</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="SOAP Response" id="d8f85344-b430-45b3-bf64-52c84c6ddab9"/>
+            <con:assertion type="Schema Compliance" id="40ae275d-d617-4041-9baa-2260726eb6e4">
+              <con:configuration/>
+            </con:assertion>
+            <con:assertion type="SOAP Fault Assertion" id="cd914ac0-0de0-4b48-a4c7-2a2f23d6dabf"/>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="f3839d87-b8fb-46ce-80f2-1dd60fcecd80" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC7_ValidateCheckingAccount" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" id="18392e43-36ef-4ae8-bef7-49dbf9e283c1" name="getAccountDetails">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="getAccountDetails" id="3ea8feec-61ea-4d02-b564-98155f2be5f1">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>${#TestSuite#CheckingAccountNumber}</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="SOAP Fault Assertion" id="986b24de-7d20-486d-af22-a1cf4b3b3032" name="Not SOAP Fault"/>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="getAccountDetails" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="3c129460-499e-41f6-a9fd-c85329c28166" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC8_ValidateSavingsAccount" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" id="4063fd2e-be5e-486a-abd9-b83aa76e2a6a" name="getAccountDetails">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="getAccountDetails" id="3ea8feec-61ea-4d02-b564-98155f2be5f1">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>${#TestSuite#SavingsAccountNumber}</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="Schema Compliance" id="6cecd08d-7a5d-4620-9b93-0155bcf1a1d6" name="Schema Compliance">
+              <con:configuration>
+                <definition/>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="SOAP Fault Assertion" id="a2c57e97-5604-44d1-a7ee-a2f2ce20e18f" name="Not SOAP Fault"/>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="getAccountDetails" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="957158c4-9960-4ebd-8a20-68165a3543d3" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC9_ValidateCreditCardAccount" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" id="780384c4-6378-48e2-8212-9218496c6b02" name="getAccountDetails">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="getAccountDetails" id="3ea8feec-61ea-4d02-b564-98155f2be5f1">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>${#TestSuite#CreditCardAccountNumber}</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="SOAP Fault Assertion" id="516e4d87-1b76-435e-9d79-8638ac3ee884" name="Not SOAP Fault"/>
+            <con:assertion type="Schema Compliance" id="54b2cbde-a017-474b-b3dc-370a0fcc0e57" name="Schema Compliance">
+              <con:configuration>
+                <definition/>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="getAccountDetails" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="286d848c-a018-4019-974b-e8bbd4d05c39" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC10_ValidateAccountHolders" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" id="9521399c-6413-4334-b0c8-5fc039ce1ece" name="getAccountDetails">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="getAccountDetails" id="3ea8feec-61ea-4d02-b564-98155f2be5f1">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>{#TestSuite#ValidAccountNumber}</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="Schema Compliance" id="b2390971-8521-4bb0-908e-e3b8b96a8912" name="Schema Compliance">
+              <con:configuration>
+                <definition/>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="SOAP Fault Assertion" id="002e1895-36ba-4da1-86f0-366d4ed9c219" name="Not SOAP Fault"/>
+            <con:assertion type="XPath Match" id="ec06a2b6-2a3e-4cfc-9799-7e5660c5168e"
+                           name="XPath Match - Validates the Account Holder">
+              <con:configuration>
+                <path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/'; declare namespace
+                      m="http://demo5649868.mockable.io/service/1"; exists(//*:AccountHoldersList/*:AccountHolder)</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="getAccountDetails" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="7b5cbc0f-34b1-464a-a292-7455fb72ed6f" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC11_ValidateCountOfAccountHolders" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" id="017ed2dd-c17f-4be2-9af3-8b6302d37df4" name="getAccountDetails">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="getAccountDetails" id="3ea8feec-61ea-4d02-b564-98155f2be5f1">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>${#TestSuite#ValidAccountNumber}</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="SOAP Fault Assertion" id="15e6f518-1f99-4386-acf1-84573b2e8af5" name="Not SOAP Fault"/>
+            <con:assertion type="Schema Compliance" id="f917ed2d-b2da-4104-b1d9-737b7301910b" name="Schema Compliance">
+              <con:configuration>
+                <definition/>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="eb68a555-59ce-4b85-99a3-12cbd7afeb30"
+                           name="XPath Match -Exists NumberOfAccountHolders">
+              <con:configuration>
+                <path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/'; declare namespace
+                      m="http://demo5649868.mockable.io/service/1"; exists(//*:NumberOfAccountHolders)</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="getAccountDetails" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="9611fe72-ba61-4331-86bf-b2d7e24665cc" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC12_ValidateOpenAccountStatus" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" id="1542ea73-dfbc-4b09-8d89-a05458fc181d" name="getAccountDetails">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="getAccountDetails" id="3ea8feec-61ea-4d02-b564-98155f2be5f1">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>${#TestSuite#ValidAccountNumber}?</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="SOAP Fault Assertion" id="22f3b0d7-fcca-476b-adf2-dc3078d4bcec" name="Not SOAP Fault"/>
+            <con:assertion type="Schema Compliance" id="7e26814b-c9d0-4c64-9927-1e010b2ae018" name="Schema Compliance">
+              <con:configuration>
+                <definition/>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="3c8fa192-8c03-4088-9802-6b74d7b80bc0" name="XPath Match">
+              <con:configuration>
+                <path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/'; declare namespace
+                      m="http://demo5649868.mockable.io/service/1"; //*:AccountStatus/text()</path>
+                <content>Open</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="getAccountDetails" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="7a5fa252-2897-4f33-8d80-f8040c9c7749" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC13_ValidateFraudlentAccountStatus" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" id="fdb58d95-76b7-4e83-bfb7-ffae331e562b" name="getAccountDetails">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="getAccountDetails" id="3ea8feec-61ea-4d02-b564-98155f2be5f1">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>?</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="Schema Compliance" id="a9289b61-bd36-45e3-80cd-51482f4e5855" name="Schema Compliance">
+              <con:configuration>
+                <definition/>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="SOAP Fault Assertion" id="b0a8feea-9110-4296-9b1d-f3129988d0bb" name="Not SOAP Fault"/>
+            <con:assertion type="XPath Match" id="4e1c81cd-6e3c-48b3-8855-c283c225457c" name="XPath Match">
+              <con:configuration>
+                <path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/'; declare namespace
+                      m="http://demo5649868.mockable.io/service/1"; count(//*:AccountStatus/text())</path>
+                <content>'Fradulent'</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="getAccountDetails" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="a32a7b21-87ae-4360-b33f-b445514f5238" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC14_ValidateClosedAccountStatus" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" id="786972d6-bd6f-4aa3-8ee8-9b262cf553fb" name="getAccountDetails">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="getAccountDetails" id="3ea8feec-61ea-4d02-b564-98155f2be5f1">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>${#TestSuite#ClosedAccountNumber}</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="SOAP Fault Assertion" id="63503608-f890-4c1e-bb00-6cd309c72717" name="Not SOAP Fault"/>
+            <con:assertion type="Schema Compliance" id="1f9309a8-d02f-42b9-8931-c42a16cf2d15" name="Schema Compliance">
+              <con:configuration>
+                <definition/>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="de6a5ba0-4ee3-4711-a27b-0bf2e02b53a3" name="XPath Match">
+              <con:configuration>
+                <path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/'; declare namespace
+                      m="http://demo5649868.mockable.io/service/1"; //*:AccountStatus/text()</path>
+                <content>'closed'</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="getAccountDetails" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="1f5e2be0-8df3-4da0-bffa-5b9d2f97d3d5" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC15_ValidateJointBusinessAccountType"
+                  searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" id="9a3f125a-a42b-4d16-a364-efc0dfa1e332" name="getAccountDetails">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="getAccountDetails" id="3ea8feec-61ea-4d02-b564-98155f2be5f1">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>${#TestSuite#BusinessAccountNumber}</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="SOAP Fault Assertion" id="5f6054d4-7ed4-4a9e-a1aa-484738aece83" name="Not SOAP Fault"/>
+            <con:assertion type="Schema Compliance" id="76bd3855-bca8-4706-b7bf-0d819e4b9e36" name="Schema Compliance">
+              <con:configuration>
+                <definition/>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="5080dd8c-d647-4f89-8acb-8d0a6f716009" name="XPath Match">
+              <con:configuration>
+                <path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/'; declare namespace
+                      m="http://demo5649868.mockable.io/service/1"; //*:JointAccountType/text()</path>
+                <content>'Business'</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="getAccountDetails" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="46b41fd9-163f-4d8b-a854-4fd895e98fcf" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC16_ValidateJointPersonalAccountType"
+                  searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" id="7b642f69-9435-48ed-bd61-a293c7416e31" name="getAccountDetails">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="getAccountDetails" id="3ea8feec-61ea-4d02-b564-98155f2be5f1">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>${#TestSuite#ValidAccountNumber}</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="SOAP Fault Assertion" id="6ef844bb-b8ad-4625-8ee6-14de272d0f68" name="Not SOAP Fault"/>
+            <con:assertion type="Schema Compliance" id="15e6f02d-e060-4919-b2a2-a66efb66ae87" name="Schema Compliance">
+              <con:configuration>
+                <definition/>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="5a5dbc58-ff44-486a-b0d8-78ded1bf84eb"
+                           name="XPath Match -ValidateJointPersonalAccountType">
+              <con:configuration>
+                <path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/'; declare namespace
+                      m="http://demo5649868.mockable.io/service/1"; //*:JointAccountType/text()</path>
+                <content>Personal</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="getAccountDetails" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="fca31725-279f-4236-a0b9-fd4cb79b6385" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC17_Validate7RoutingNumber" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" id="98ae6fc8-9462-4787-8fab-4510cb591b8b" name="getAccountDetails">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="getAccountDetails" id="3ea8feec-61ea-4d02-b564-98155f2be5f1">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>${#TestSuite#ValidAccountNumber}</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="Schema Compliance" id="6018ef65-615b-4bfc-a958-1ee190793033" name="Schema Compliance">
+              <con:configuration>
+                <definition/>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="SOAP Fault Assertion" id="323e25e6-767a-4e36-8406-dba9548a4710" name="Not SOAP Fault"/>
+            <con:assertion type="GroovyScriptAssertion" id="24341f00-9298-40b4-9230-471f3f31f9fc"
+                           name="Script Assertion">
+              <con:configuration>
+                <scriptText>import com.eviware.soapui.support.XmlHolder // check for RequestId element in response def
+                            holder = new XmlHolder( messageExchange.responseContentAsXml ) def routingNumber =
+                            holder["//*:RoutingNumber"] assert routingNumber.length() == 7</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="getAccountDetails" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="b3beef70-503f-4b1a-a0dc-3511ee93e7c3" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC18_Validate10DigitAccountNumber" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" name="SOAP Request" id="c77f2406-43eb-4187-916f-6b47ce9668b8">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="SOAP Request" id="3e775811-1d46-4a47-b06d-71a87bcb361a">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>${#TestSuite#ValidAccountNumber}</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="SOAP Response" id="322a2715-660a-4ec4-8c36-9561d21ab846"/>
+            <con:assertion type="Schema Compliance" id="33914bbb-b9e7-475f-b741-8e213b0f36c2">
+              <con:configuration/>
+            </con:assertion>
+            <con:assertion type="SOAP Fault Assertion" id="efa7833b-2d24-4274-8e04-1c3a73d24131"/>
+            <con:assertion type="GroovyScriptAssertion" id="29c57c7e-460d-4db9-ba50-cf8976bf41d1"
+                           name="Script Assertion">
+              <con:configuration>
+                <scriptText>import com.eviware.soapui.support.XmlHolder // check for RequestId element in response def
+                            holder = new XmlHolder( messageExchange.responseContentAsXml ) def accountNumber =
+                            holder["//*:AccountNumber"] assert accountNumber.length() == 10</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="cbaea0b6-b41a-4b40-883d-56fc79ea7cca" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC19_ValidateOverDraftAccount" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" name="SOAP Request" id="960a1053-f34f-43df-81cf-f66e73a9cd75">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="SOAP Request" id="51e83e53-15b7-4efa-b71a-0460b9faa5fb">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>${#TestSuite#OverDraftAccountNumber}</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="SOAP Response" id="ed632a8f-734f-421d-88ac-550e8db42602"/>
+            <con:assertion type="Schema Compliance" id="352239c8-d8f3-4adc-9106-4f3c4898348b">
+              <con:configuration/>
+            </con:assertion>
+            <con:assertion type="SOAP Fault Assertion" id="ebff4781-3134-493b-ba42-a61fa0a2c5b1"/>
+            <con:assertion type="GroovyScriptAssertion" id="41cf718f-7097-4e3d-b513-e9599e78965c"
+                           name="Script Assertion">
+              <con:configuration>
+                <scriptText>import com.eviware.soapui.support.XmlHolder // check for RequestId element in response def
+                            holder = new XmlHolder( messageExchange.responseContentAsXml ) def overdraftProtection =
+                            holder["//*:OverdraftProtection"] assert overdraftProtection == 'true'</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="c32a24fa-4577-4479-88e8-90720d433012" failOnError="true" failTestCaseOnErrors="true"
+                  keepSession="false" maxResults="0" name="TC20_ValidateNoOverDraftAccount" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" name="SOAP Request" id="7b6873d1-b69d-45e6-b59f-d383c39924aa">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>accountserviceBinding</con:interface>
+          <con:operation>getAccountDetails</con:operation>
+          <con:request name="SOAP Request" id="5140fa05-ca5b-4490-a76a-dc2e4a99768e">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://demo5649868.mockable.io/accountservice</con:endpoint>
+            <con:request>
+              <![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getAccountDetailsRequest>${#TestSuite#ValidAccountNumber}</ns:getAccountDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]>
+            </con:request>
+            <con:assertion type="SOAP Response" id="ec9345a0-b092-4b03-b23a-67450dd92ccd"/>
+            <con:assertion type="Schema Compliance" id="58113848-422f-494f-883a-2cebea956bf2">
+              <con:configuration/>
+            </con:assertion>
+            <con:assertion type="SOAP Fault Assertion" id="e9780a34-5753-41b7-b01c-7083fbf4315e"/>
+            <con:assertion type="GroovyScriptAssertion" id="0df62b95-fc8a-466f-8bfa-a658ef9fadc5"
+                           name="Script Assertion">
+              <con:configuration>
+                <scriptText>import com.eviware.soapui.support.XmlHolder // check for RequestId element in response def
+                            holder = new XmlHolder( messageExchange.responseContentAsXml ) def overdraftProtection =
+                            holder["//*:OverdraftProtection"] assert overdraftProtection == 'false'</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:properties>
+      <con:property>
+        <con:name>ValidAccountNumber</con:name>
+        <con:value>1111111111</con:value>
+      </con:property>
+      <con:property>
+        <con:name>InValidAccountNumber</con:name>
+        <con:value>2222222222</con:value>
+      </con:property>
+      <con:property>
+        <con:name>ActiveAccountNumber</con:name>
+        <con:value>3333333333</con:value>
+      </con:property>
+      <con:property>
+        <con:name>ClosedAccountNumber</con:name>
+        <con:value>4444444444</con:value>
+      </con:property>
+      <con:property>
+        <con:name>CreditCardAccountNumber</con:name>
+        <con:value>5555555555</con:value>
+      </con:property>
+      <con:property>
+        <con:name>SavingsAccountNumber</con:name>
+        <con:value>6666666666</con:value>
+      </con:property>
+      <con:property>
+        <con:name>OverDraftAccountNumber</con:name>
+        <con:value>7777777777</con:value>
+      </con:property>
+      <con:property>
+        <con:name>BusinessAccountNumber</con:name>
+        <con:value>8888888888</con:value>
+      </con:property>
+      <con:property>
+        <con:name>CheckingAccountNumber</con:name>
+        <con:value>9999999999</con:value>
+      </con:property>
+    </con:properties>
+  </con:testSuite>
+  <con:properties>
+    <con:property>
+      <con:name>DEV_URL</con:name>
+      <con:value>http://demo5649868.mockable.io/accountservice</con:value>
+    </con:property>
+    <con:property>
+      <con:name>SIT_URL</con:name>
+      <con:value>http://demo5649868.mockable.io/accountservice</con:value>
+    </con:property>
+    <con:property>
+      <con:name>UAT_URL</con:name>
+      <con:value>http://demo5649868.mockable.io/accountservice</con:value>
+    </con:property>
+    <con:property>
+      <con:name>PERF_URL</con:name>
+      <con:value>http://demo5649868.mockable.io/accountservice</con:value>
+    </con:property>
+    <con:property>
+      <con:name>URL</con:name>
+      <con:value>${#Project#DEV_URL}</con:value>
+    </con:property>
+  </con:properties>
+  <con:wssContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:sensitiveInformation/>
+</con:soapui-project>

@@ -1,0 +1,71 @@
+Status: FAILED
+Time Taken: 182
+Size: 1368
+Timestamp: Sun May 28 21:24:13 EDT 2017
+TestStep: getAccountDetails
+
+----------------- Messages ------------------------------
+[XPath Match] XPathContains comparison failed, expecting ['closed'], actual was [Open]
+
+----------------- Properties ------------------------------
+Endpoint: http://demo5649868.mockable.io/accountservice
+Encoding: UTF-8
+
+---------------- Request ---------------------------
+Request Headers: SOAPAction : "getAccountDetails"
+Connection : Keep-Alive
+User-Agent : Apache-HttpClient/4.1.1 (java 1.5)
+Host : demo5649868.mockable.io
+Accept-Encoding : gzip,deflate
+Content-Length : 320
+Content-Type : text/xml;charset=UTF-8
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5649868.mockable.io/service/1">
+   \r
+   <soapenv:Header/>
+   \r
+   <soapenv:Body>
+      \r
+      <ns:getAccountDetailsRequest>4444444444</ns:getAccountDetailsRequest>
+      \r
+   </soapenv:Body>
+   \r
+</soapenv:Envelope>
+
+---------------- Response --------------------------
+Response Headers: X-Cloud-Trace-Context : d44e0f54f500ea3ef6e8d59072375ab7
+Server : Google Frontend
+#status# : HTTP/1.1 200 OK
+Content-Length : 1368
+Date : Mon, 29 May 2017 01:24:12 GMT
+Content-Type : application/xml; charset=UTF-8
+
+
+<soapenv:Envelope soap:encodingStyle="http://www.w3.org/2001/12/soap-encoding" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:m="http://demo5649868.mockable.io/service/1" xmlns:soap="soap">
+   <soapenv:Body xmlns:ms="http://www.acmebank.org/retail">
+      <m:getAccountDetailsResponse>
+         <m:AccountNumber>1234567890</m:AccountNumber>
+         <m:AccountName>Chase Bank</m:AccountName>
+         <m:RoutingNumber>1234567</m:RoutingNumber>
+         <m:CurrentBalance>134.5</m:CurrentBalance>
+         <m:OpeningBalance>34.5</m:OpeningBalance>
+         <m:OverdraftProtection>true</m:OverdraftProtection>
+         <m:AccountPrimaryName>Robert</m:AccountPrimaryName>
+         <m:AccountType>Checking</m:AccountType>
+         <m:NumberOfAccountHolders>2</m:NumberOfAccountHolders>
+         <m:JointAccountType>Personal</m:JointAccountType>
+         <m:AccountHoldersList>
+            <m:AccountHolder>
+               <m:AccountOwnerName>Robert</m:AccountOwnerName>
+               <m:AccountOwnerFederalId>456789</m:AccountOwnerFederalId>
+            </m:AccountHolder>
+            <m:AccountHolder>
+               <m:AccountOwnerName>Lisa</m:AccountOwnerName>
+               <m:AccountOwnerFederalId>123456</m:AccountOwnerFederalId>
+            </m:AccountHolder>
+         </m:AccountHoldersList>
+         <m:AccountStatus>Open</m:AccountStatus>
+      </m:getAccountDetailsResponse>
+   </soapenv:Body>
+</soapenv:Envelope>

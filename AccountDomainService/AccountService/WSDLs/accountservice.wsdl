@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:mio="http://demo5649868.mockable.io/service/1"
+                  targetNamespace="http://demo5649868.mockable.io/service/1">
+
+    <wsdl:documentation>
+        mockable.io generated WSDL
+    </wsdl:documentation>
+
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    targetNamespace="http://demo5649868.mockable.io/service/1">
+            
+            <xsd:element name="getAccountDetailsRequest" type="xsd:anyType"/>
+            <xsd:element name="getAccountDetailsResponse" type="xsd:anyType"/>
+            
+        </xsd:schema>
+    </wsdl:types>
+
+    
+    <wsdl:message name="getAccountDetailsInputMessage">
+        <wsdl:part name="getAccountDetailsInputPart" element="mio:getAccountDetailsRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getAccountDetailsOutputMessage">
+        <wsdl:part name="getAccountDetailsOutputPart" element="mio:getAccountDetailsResponse"/>
+    </wsdl:message>
+    
+
+    <wsdl:portType name="accountservicePortType">
+        
+        <wsdl:operation name="getAccountDetails">
+            <wsdl:input name="getAccountDetailsInput"
+                        message="mio:getAccountDetailsInputMessage"/>
+            <wsdl:output name="getAccountDetailsOutput"
+                         message="mio:getAccountDetailsOutputMessage"/>
+        </wsdl:operation>
+        
+    </wsdl:portType>
+
+    <wsdl:binding name="accountserviceBinding" type="mio:accountservicePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        
+        <wsdl:operation name="getAccountDetails">
+            <soap:operation
+                    soapAction="getAccountDetails"/>
+            <wsdl:input name="getAccountDetailsInput">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getAccountDetailsOutput">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+    </wsdl:binding>
+
+    <wsdl:service name="accountserviceService">
+        <wsdl:port name="accountservicePort" binding="mio:accountserviceBinding">
+            <soap:address
+                    location="http://demo5649868.mockable.io/accountservice"/>
+        </wsdl:port>
+    </wsdl:service>
+
+</wsdl:definitions>
