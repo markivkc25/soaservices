@@ -109,6 +109,7 @@
           <testFailIgnore>true</testFailIgnore>
           <printReport>true</printReport>
           <junitReport>true</junitReport>
+          <outputFolder>${project.build.directory}/reports</outputFolder>
         </configuration>
         <executions>
           <execution>
